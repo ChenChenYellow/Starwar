@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player_Control : MonoBehaviour
 {
-    [SerializeField] private float TorqueX_Force = 0.1f, TorqueY_Force = 0.1f, TorqueZ_Force = 0.01f;
+    [SerializeField] private float Forward_Force = 3.0f, TorqueX_Force = 0.1f, TorqueY_Force = 0.1f, TorqueZ_Force = 0.01f;
 
     Rigidbody _rigidbody;
     private void Start()
@@ -14,7 +14,7 @@ public class Player_Control : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") > 0)
         {
-            _rigidbody.AddRelativeForce(Vector3.forward, ForceMode.Force);
+            _rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * Forward_Force, ForceMode.Force);
         }
         if (!Mathf.Approximately(Input.GetAxis("TorqueX"), 0f))
         {
