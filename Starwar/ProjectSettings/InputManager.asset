@@ -187,8 +187,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: '[8]'
     positiveButton: '[2]'
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton: i
+    altPositiveButton: k
     gravity: 3
     dead: 0.001
     sensitivity: 3
@@ -203,8 +203,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: '[4]'
     positiveButton: '[6]'
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton: j
+    altPositiveButton: l
     gravity: 3
     dead: 0.001
     sensitivity: 3
@@ -217,8 +217,8 @@ InputManager:
     m_Name: TorqueZ
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: q
-    positiveButton: e
+    negativeButton: e
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
