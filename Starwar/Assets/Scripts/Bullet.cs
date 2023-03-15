@@ -1,0 +1,16 @@
+﻿using UnityEngine;
+public class Bullet : MonoBehaviour
+{
+    public float Force;
+    public Vector3 Direction, ParentVelocity;
+    private Rigidbody _rigidbody;
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+        //_rigidbody.velocity = ParentVelocity;
+    }
+    private void Start()
+    {
+        _rigidbody.AddRelativeForce(Direction * Force, ForceMode.Impulse);        
+    }
+}

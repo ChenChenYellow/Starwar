@@ -9,7 +9,10 @@ public class Player_Control : MonoBehaviour
         TorqueY_Force = 0.1f,
         TorqueZ_Force = 0.01f;
 
-    Rigidbody _rigidbody;
+    [SerializeField]
+    private MachineGun machineGun;
+
+    private Rigidbody _rigidbody;
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -37,6 +40,10 @@ public class Player_Control : MonoBehaviour
         if (!Mathf.Approximately(Input.GetAxis("TorqueZ"), 0f))
         {
             _rigidbody.AddRelativeTorque(Vector3.forward * Input.GetAxis("TorqueZ") * TorqueZ_Force, ForceMode.Force);
+        }
+        if (Input.GetButton("Jump"))
+        {
+            machineGun.Fire();
         }
     }
 }
