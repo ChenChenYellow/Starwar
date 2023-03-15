@@ -15,7 +15,7 @@ public class Player_Control : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.GetAxis("Vertical") > 0)
         {

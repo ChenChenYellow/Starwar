@@ -70,7 +70,7 @@ public class LookAtTarget : SteeringMovement
         ret.TorqueY = torqueY;
         ret.TorqueZ = torqueZ;
 
-        Debug.Log(agent.Rigidbody.angularVelocity + " " + agent.LocalAngularVelocity);
+        //Debug.Log(agent.Rigidbody.angularVelocity + " " + agent.LocalAngularVelocity);
         return ret;
     }
 }

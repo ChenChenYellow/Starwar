@@ -25,7 +25,7 @@ public class SteeringAgent : MonoBehaviour
         }
         return ret;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         LocalAngularVelocity = transform.InverseTransformDirection(Rigidbody.angularVelocity);
         Steering finalSteering = GetSteeringSum();
