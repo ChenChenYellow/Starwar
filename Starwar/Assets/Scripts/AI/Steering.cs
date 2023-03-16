@@ -19,4 +19,11 @@ public class Steering
         TorqueZ += steering.TorqueZ;
         ForwardLinear += steering.ForwardLinear;
     }
+    public void Clamp(float maxTorqueX, float maxTorqueY, float maxTorqueZ, float maxForwardLinear)
+    {
+        TorqueX = Mathf.Clamp(TorqueX, -maxTorqueX, maxTorqueX);
+        TorqueY = Mathf.Clamp(TorqueY, -maxTorqueY, maxTorqueY);
+        TorqueZ = Mathf.Clamp(TorqueZ, -maxTorqueZ, maxTorqueZ);
+        ForwardLinear = Mathf.Clamp(ForwardLinear, 0, maxForwardLinear);
+    }
 }

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 public class Bullet : MonoBehaviour
 {
-    public float Force;
+    public float Force, Lifetime;
     public Vector3 Direction, ParentVelocity;
+
     private Rigidbody _rigidbody;
     private void Awake()
     {
@@ -11,6 +12,7 @@ public class Bullet : MonoBehaviour
     }
     private void Start()
     {
-        _rigidbody.AddRelativeForce(Direction * Force, ForceMode.Impulse);        
+        _rigidbody.AddRelativeForce(Direction * Force, ForceMode.Impulse);
+        Destroy(gameObject, Lifetime);
     }
 }

@@ -323,25 +323,6 @@ MonoBehaviour:
   Scale: 0.94
   ParentBody: {fileID: 4942797449593434093}
   ParentTransform: {fileID: 223642646}
---- !u!1 &1040252139 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7574413194778819842, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-  m_PrefabInstance: {fileID: 2116112685}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1040252147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040252139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c8b9979a884aae49bcca605fbd81f4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1997493515}
-  MinimumAngle: 10
 --- !u!1 &1997493515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4942797449781423101, guid: 028066df5d2c5a74597a3a6023755a40, type: 3}
@@ -452,61 +433,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1396029868431263928, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: SteeringMovements.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396029868431263928, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: SteeringMovements.Array.data[1]
+    - target: {fileID: 1040252147, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
+      propertyPath: target
       value: 
-      objectReference: {fileID: 1040252147}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Kd.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Kd.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Kd.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Ki.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Ki.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Ki.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Kp.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Kp.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: Kp.z
-      value: 30
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1997493515}
     - target: {fileID: 2445317716126148882, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
       propertyPath: target
+      value: 
+      objectReference: {fileID: 1997493515}
+    - target: {fileID: 3712162348283784580, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1997493515}
+    - target: {fileID: 3712162348283784580, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
+      propertyPath: targetBody
+      value: 
+      objectReference: {fileID: 4942797449593434093}
+    - target: {fileID: 6881588114952547225, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
+      propertyPath: Target
       value: 
       objectReference: {fileID: 1997493515}
     - target: {fileID: 7574413194778819842, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
       propertyPath: m_Name
       value: Aircraft Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574413194778819842, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7574413194778819845, guid: 2d86972ca383ba040bf1469907bf27ea, type: 3}
       propertyPath: m_RootOrder

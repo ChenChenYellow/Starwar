@@ -1,13 +1,27 @@
 ﻿using UnityEngine;
-public class LookAtTarget : SteeringMovement
+public class PreAim : SteeringMovement
 {
     public GameObject target;
+    public Rigidbody targetBody;
     public Vector3 Kp, Ki, Kd, PreviousError;
+    public float LeadFactor;
     private Vector3 P, I, D;
+    public float FireAngle;
+    public MachineGun machineGun;
+
     public override Steering GetSteering(SteeringAgent agent)
     {
         Steering ret = base.GetSteering(agent);
-        Vector3 targetDirection = target.transform.position - transform.position;
+
+        Vector3 targetFuturPosition = target.transform.position + LeadFactor * targetBody.velocity;
+        Vector3 targetDirection = targetFuturPosition - transform.position;
+        float fireAngle = Vector3.Angle(targetDirection, transform.forward);
+        if (fireAngle <= FireAngle)
+        {
+            machineGun.Fire();
+        }
+
+        // Same as LookAtTarget
         float angleFromUpToTargetDirection = Vector3.Angle(transform.up, targetDirection);
         float angleFromDownToTargetDirection = Vector3.Angle(-transform.up, targetDirection);
 
