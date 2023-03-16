@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5031685119913294486, guid: 028066df5d2c5a74597a3a6023755a40, type: 3}
       propertyPath: BulletLifetime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4942797449781423099, guid: 028066df5d2c5a74597a3a6023755a40, type: 3}
@@ -147,7 +147,7 @@ MonoBehaviour:
   Ki: {x: 0.1, y: 0.1, z: 0.1}
   Kd: {x: 0.2, y: 0.2, z: 0.2}
   PreviousError: {x: 0, y: 0, z: 0}
-  LeadFactor: 4
+  LeadFactor: 3
   FireAngle: 20
   machineGun: {fileID: 7517002876077730921}
 --- !u!114 &6881588114952547225
