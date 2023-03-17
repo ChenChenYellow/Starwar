@@ -2,8 +2,8 @@
 public class MachineGun : MonoBehaviour
 {
     [SerializeField] float MaxAngle, Force, Interval, BulletLifetime;
-    [SerializeField] GameObject BulletPrefab;
-    [SerializeField] Rigidbody ParentRigidBody;
+    [SerializeField] private GameObject BulletPrefab;
+    [SerializeField] private Rigidbody ParentRigidBody;
 
     private float lastFire;
     private void Start()

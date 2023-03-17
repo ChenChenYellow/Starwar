@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
-public class LookAtTarget : SteeringMovement
+public class LookAway : SteeringMovement
 {
-    public GameObject Target;
+    public GameObject target;
     public Vector3 Kp, Ki, Kd, PreviousError;
     private Vector3 P, I, D;
     public override Steering GetSteering(SteeringAgent agent)
     {
         Steering ret = base.GetSteering(agent);
-        Vector3 targetDirection = Target.transform.position - transform.position;
+        Vector3 targetDirection = transform.position - target.transform.position;
         float angleFromUpToTargetDirection = Vector3.Angle(transform.up, targetDirection);
         float angleFromDownToTargetDirection = Vector3.Angle(-transform.up, targetDirection);
 

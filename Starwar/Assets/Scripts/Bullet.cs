@@ -15,4 +15,8 @@ public class Bullet : MonoBehaviour
         _rigidbody.AddRelativeForce(Direction * Force, ForceMode.Impulse);
         Destroy(gameObject, Lifetime);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject, 0.1f);
+    }
 }

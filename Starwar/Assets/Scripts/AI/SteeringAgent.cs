@@ -23,6 +23,7 @@ public class SteeringAgent : MonoBehaviour
         {
             ret.Add(steeringMovement.GetSteering(this));
         }
+        ret.Clamp(TorqueX_Force, TorqueY_Force, TorqueZ_Force, Forward_Force);
         return ret;
     }
     private void FixedUpdate()

@@ -12,6 +12,9 @@ public class Player_Control : MonoBehaviour
     [SerializeField]
     private MachineGun machineGun;
 
+    [SerializeField]
+    private MissileLauncher missileLauncher;
+
     private Rigidbody _rigidbody;
     private void Start()
     {
@@ -43,7 +46,9 @@ public class Player_Control : MonoBehaviour
         }
         if (Input.GetButton("Jump"))
         {
-            machineGun.Fire();
+            // machineGun.Fire();
+            missileLauncher.LockOn();
+            missileLauncher.Launch();
         }
     }
 }
