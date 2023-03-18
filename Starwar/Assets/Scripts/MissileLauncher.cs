@@ -1,53 +1,30 @@
 ﻿using UnityEngine;
 public class MissileLauncher : MonoBehaviour
 {
-
-    [SerializeField] float MaxLockOnAngle, MaxLockOnDistance, InitialLauchForce;
+    [SerializeField] float InitialLauchForce;
     [SerializeField]
-    private GameObject MissilePrefab,
-         ParentObject;
-    public bool IsLoaded = true;
-    public GameObject Target;
-    public void LockOn()
+    private GameObject MissilePrefab;
+    private bool isLoaded = true;
+    public bool IsLoaded
     {
-        Collider[] colliders = Physics.OverlapSphere(ParentObject.transform.position, MaxLockOnDistance);
-        Collider targetCollider = null;
-        float targetAngle = 0;
-        foreach (Collider collider in colliders)
+        get { return isLoaded; }
+        set
         {
-            if (collider.gameObject == ParentObject) { continue; }
-            Vector3 colliderDirection = collider.transform.position - ParentObject.transform.position;
-            float colliderAngle = Vector3.Angle(ParentObject.transform.forward, colliderDirection);
-            if (colliderAngle <= MaxLockOnAngle)
-            {
-                if (targetCollider == null)
-                {
-                    targetAngle = colliderAngle;
-                    targetCollider = collider;
-                    continue;
-                }
-                else
-                {
-                    if (targetAngle < colliderAngle) { continue; }
-                    else
-                    {
-                        targetAngle = colliderAngle;
-                        targetCollider = collider;
-                        continue;
-                    }
-                }
-            }
+            isLoaded = value;
+            if (isLoaded) { gameObject.SetActive(true); }
+            else { gameObject.SetActive(false); }
         }
-        Target = targetCollider.gameObject;
     }
+    public GameObject Target;
+
     public void Launch()
     {
         if (Target != null && IsLoaded)
         {
-            GameObject missleObject = Instantiate(MissilePrefab, transform.position - 5 * transform.up, transform.rotation);
+            GameObject missleObject = Instantiate(MissilePrefab, transform.position - 2 * transform.up, transform.rotation);
             Missile missle = missleObject.GetComponent<Missile>();
             missle.InitialLauchForce = InitialLauchForce;
-            missle.Target = Target; 
+            missle.Target = Target;
             IsLoaded = false;
         }
     }

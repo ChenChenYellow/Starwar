@@ -13,7 +13,7 @@ public class Player_Control : MonoBehaviour
     private MachineGun machineGun;
 
     [SerializeField]
-    private MissileLauncher missileLauncher;
+    private MissileLauncherManager missileLauncherManager;
 
     private Rigidbody _rigidbody;
     private void Start()
@@ -35,7 +35,7 @@ public class Player_Control : MonoBehaviour
         {
             // Turns like in space
             _rigidbody.AddRelativeTorque(Vector3.up * Input.GetAxis("TorqueY") * TorqueY_Force, ForceMode.Force);
-            
+
             // Turns like in air
             //_rigidbody.AddRelativeTorque(Vector3.left * Input.GetAxis("TorqueY") * TorqueX_Force, ForceMode.Force);
             //_rigidbody.AddRelativeTorque(Vector3.forward * -Input.GetAxis("TorqueY") * TorqueZ_Force, ForceMode.Force);
@@ -47,8 +47,11 @@ public class Player_Control : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             // machineGun.Fire();
-            missileLauncher.LockOn();
-            missileLauncher.Launch();
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            missileLauncherManager.LockOn();
+            missileLauncherManager.Fire();
         }
     }
 }

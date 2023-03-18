@@ -10,7 +10,7 @@ public class SteeringAgent : MonoBehaviour
         TorqueY_Force = 0.1f,
         TorqueZ_Force = 0.01f;
 
-    public Rigidbody Rigidbody;
+    private Rigidbody Rigidbody;
     public Vector3 LocalAngularVelocity;
     private void Start()
     {
